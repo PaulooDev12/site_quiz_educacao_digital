@@ -182,8 +182,10 @@ function showResults(): void{
             nextBtn.onclick = () => loadStation(currentStationIndex + 1)
         }else{
             nextBtn.innerText = "Reiniciar Quiz";
-            localStorage.removeItem(STORAGE_KEY);
-            nextBtn.onclick = () => loadStation(0);
+            nextBtn.onclick = () =>{ 
+                loadStation(0);
+                localStorage.removeItem(STORAGE_KEY);
+            };
         }
     }
     
