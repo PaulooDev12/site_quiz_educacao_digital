@@ -64,6 +64,7 @@ main.blur{
     transition: 0.2s;
 }
 
+
 .option-btn:hover {
     background: #000a31;
     transform: translateY(-3px);

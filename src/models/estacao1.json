@@ -1,12 +1,24 @@
 [
-     {
-        "question": "O que typescript adiciona ao javaScript:",
-        "options": ["tipagem estática", "Banco de dados", "gateway de APIs"],
-        "correct": 0
-    },
-    {
-        "question": "Qual dessas é uma linguagem orientada a objetos?",
-        "options": ["C#", "C", "Ruby"],
-        "correct": 0
-    }
+  {
+    "id": 1,
+    "question": "O que typescript adiciona ao javaScript?",
+    "type": "text",
+    "options": [
+      "Tipagem estática",
+      "Banco de dados",
+      "Gateway de APIs"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 2,
+    "question": "Qual dessas é uma linguagem orientada a objetos?",
+    "type": "text",
+    "options": [
+      "C#",
+      "C",
+      "Assembly"
+    ],
+    "correct": 0
+  }
 ]
