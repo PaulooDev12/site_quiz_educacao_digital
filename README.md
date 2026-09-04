@@ -18,6 +18,7 @@
     { id: "estacao2", title: "Estação 2: Imagens e Identificação", file: "models/estacao2.json" }
 ]; 
 </pre>
+
 -------
 <h1>A estrutura de pastas mostra melhor esse funcionamento</h1>
 <pre>
