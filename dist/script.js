@@ -11,6 +11,7 @@ let currentQuestionIndex = 0;
 let timeLeft = TIME;
 let streak = 0;
 let timerId = null;
+const quizTitle = document.getElementById('title');
 const quizScreen = document.getElementById('quiz-screen');
 const resultScreen = document.getElementById('result-screen');
 const questionNumberElement = document.getElementById('question-number');
@@ -37,12 +38,14 @@ function saveStationCompletion(stationId, stationScore) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
 }
 async function loadStation(index) {
+    quizTitle.innerText = '';
     if (index < 0 || index >= STATIONS.length)
         return;
     currentStationIndex = index;
     const station = STATIONS[currentStationIndex];
     if (!station)
         return;
+    quizTitle.innerText = station.title;
     try {
         const response = await fetch(station.file);
         if (!response.ok)
@@ -54,23 +57,6 @@ async function loadStation(index) {
     }
     catch (error) {
         console.error("falhas na request ", error);
-    }
-}
-async function loadQuestions(stationFile) {
-    try {
-        const response = await fetch(stationFile);
-        if (!response.ok) {
-            throw new Error(`Erro ao carregar arquivo: ${stationFile} código do erro ${response.statusText}`);
-        }
-        console.log(`Perguntas carregadas de ${stationFile}`);
-        questions = await response.json();
-        startQuiz();
-    }
-    catch (error) {
-        console.log("falha ao carregar arquivo ", error);
-        if (questionTextElement) {
-            questionTextElement.innerText = "falha ao carregar questões";
-        }
     }
 }
 function showQuestion() {

@@ -14,13 +14,14 @@ let currentQuestionIndex = 0
 let timeLeft = TIME;
 let streak = 0;
 let timerId: number | null = null;
-const quizScreen = document.getElementById('quiz-screen') as HTMLElement ;
-const resultScreen = document.getElementById('result-screen') as HTMLDivElement ;
+const quizTitle = document.getElementById('title') as HTMLElement;
+const quizScreen = document.getElementById('quiz-screen') as HTMLElement;
+const resultScreen = document.getElementById('result-screen') as HTMLDivElement;
 const questionNumberElement = document.getElementById('question-number') as HTMLSpanElement;
-const timerDisplayElement = document.getElementById('timer-display') as HTMLSpanElement ;
-const questionTextElement = document.getElementById('question-text') as HTMLHeadingElement ;
-const optionsContainer = document.getElementById('options-container') as HTMLDivElement ;
-const finalScoreElement = document.getElementById('final-score') as HTMLParagraphElement ;
+const timerDisplayElement = document.getElementById('timer-display') as HTMLSpanElement;
+const questionTextElement = document.getElementById('question-text') as HTMLHeadingElement;
+const optionsContainer = document.getElementById('options-container') as HTMLDivElement;
+const finalScoreElement = document.getElementById('final-score') as HTMLParagraphElement;
 function startQuiz(): void{
     score = 0
     streak = 0;
@@ -42,10 +43,12 @@ function saveStationCompletion(stationId: string, stationScore: number){
 }
 
 async function loadStation(index: number): Promise<void>{
+    quizTitle.innerText = '';
     if(index < 0 || index >= STATIONS.length) return;
     currentStationIndex = index;
     const station = STATIONS[currentStationIndex];
     if(!station) return;
+    quizTitle.innerText = station.title;
     try{
         const response = await fetch(station.file);
         if(!response.ok) throw new Error(`Erro ao carregar arquivo da estação ${station.file}`);
@@ -58,23 +61,7 @@ async function loadStation(index: number): Promise<void>{
     }
 }
 
-async function loadQuestions(stationFile: string): Promise<void>{
-    try{
-        const response = await fetch(stationFile);
-        if(!response.ok){
-            throw new Error(`Erro ao carregar arquivo: ${stationFile} código do erro ${response.statusText}`);
-        }
-        console.log(`Perguntas carregadas de ${stationFile}`)
-        questions = await response.json();
-        startQuiz();
-        
-    }catch(error){
-        console.log("falha ao carregar arquivo ", error);
-        if(questionTextElement){
-            questionTextElement.innerText = "falha ao carregar questões"
-        }
-    }
-}
+
 function showQuestion(): void{
     optionsContainer.innerHTML = '';
     const currentQuestion = questions[currentQuestionIndex];
