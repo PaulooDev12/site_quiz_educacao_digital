@@ -1,16 +1,5 @@
 ;
-const questions = [
-    {
-        question: "O que typescript adiciona ao javaScript:",
-        options: ["tipagem estática", "Banco de dados", "gateway de APIs"],
-        correct: 0
-    },
-    {
-        question: "Qual dessas é uma linguagem orientada a objetos?",
-        options: ["C#", "C", "Ruby"],
-        correct: 0
-    }
-];
+let questions = [];
 const TIME = 10;
 let score = 0;
 let currentQuestionIndex = 0;
@@ -25,9 +14,25 @@ const questionTextElement = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
 const finalScoreElement = document.getElementById('final-score');
 function startQuiz() {
-    currentQuestionIndex = 0;
     score = 0;
     showQuestion();
+}
+async function loadQuestions(stationFile) {
+    try {
+        const response = await fetch(stationFile);
+        if (!response.ok) {
+            throw new Error(`Erro ao carregar arquivo: ${stationFile} código do erro ${response.statusText}`);
+        }
+        console.log(`Perguntas carregadas de ${stationFile}`);
+        questions = await response.json();
+        startQuiz();
+    }
+    catch (error) {
+        console.log("falha ao carregar arquivo ", error);
+        if (questionTextElement) {
+            questionTextElement.innerText = "falha ao carregar questões";
+        }
+    }
 }
 function showQuestion() {
     optionsContainer.innerHTML = '';
@@ -121,10 +126,13 @@ function startTimer() {
             if (timerId)
                 clearInterval(timerId);
             resetTimer();
+            streak = 0;
             nextQuestion();
         }
     }, 1000);
 }
-document.addEventListener('DOMContentLoaded', startQuiz);
+document.addEventListener('DOMContentLoaded', () => {
+    loadQuestions("models/estacao1.json");
+});
 export {};
 //# sourceMappingURL=script.js.map

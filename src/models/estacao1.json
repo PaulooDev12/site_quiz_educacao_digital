@@ -1,0 +1,12 @@
+[
+     {
+        "question": "O que typescript adiciona ao javaScript:",
+        "options": ["tipagem estática", "Banco de dados", "gateway de APIs"],
+        "correct": 0
+    },
+    {
+        "question": "Qual dessas é uma linguagem orientada a objetos?",
+        "options": ["C#", "C", "Ruby"],
+        "correct": 0
+    }
+]
