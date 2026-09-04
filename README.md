@@ -8,3 +8,12 @@
 
 -------
 <p>após ter o repositório na sua máquina abra-o com uma extensão de servidor como live-server ou live-preview</p>
+
+<h1>Como funciona o template?</h1>
+<p>O template funciona carregando arquivos JSON de cada estação e os padronizando para interfaces typescript e os rendrizando na página através do DOM </p>
+
+--------
+<code> const STATIONS: StationConf[] = [
+    { id: "estacao1", title: "Estação 1: Fundamentos", file: "models/estacao1.json" },
+    { id: "estacao2", title: "Estação 2: Imagens e Identificação", file: "models/estacao2.json" }
+]; </code>
