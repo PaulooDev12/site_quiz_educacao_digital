@@ -20,9 +20,8 @@
 </pre>
 -------
 <h1>A estrutura de pastas mostra melhor esse funcionamento</h1>
----
 <pre>
-    ├── dist/
+    ├── dist/ <- arquivos typescript compilados
 │   ├── models/
 │   │   ├── interfaces.d.ts
 │   │   ├── interfaces.d.ts.map
@@ -33,10 +32,10 @@
 │   ├── script.js
 │   └── script.js.map
 ├── src/
-│   ├── models/
-│   │   ├── estacao1.json
-│   │   ├── estacao2.json
-│   │   └── interfaces.ts
+│   ├── models/ <- arquivos de modelagem
+│   │   ├── estacao1.json <- json a ser renderizado na página
+│   │   ├── estacao2.json 
+│   │   └── interfaces.ts <- interfaces de padrozinação
 │   ├── quiz.html
 │   ├── script.ts
 │   └── theme.css
