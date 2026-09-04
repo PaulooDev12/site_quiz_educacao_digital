@@ -18,3 +18,31 @@
     { id: "estacao2", title: "Estação 2: Imagens e Identificação", file: "models/estacao2.json" }
 ]; 
 </pre>
+-------
+<h1>A estrutura de pastas mostra melhor esse funcionamento</h1>
+---
+<pre>
+    ├── dist/
+│   ├── models/
+│   │   ├── interfaces.d.ts
+│   │   ├── interfaces.d.ts.map
+│   │   ├── interfaces.js
+│   │   └── interfaces.js.map
+│   ├── script.d.ts
+│   ├── script.d.ts.map
+│   ├── script.js
+│   └── script.js.map
+├── src/
+│   ├── models/
+│   │   ├── estacao1.json
+│   │   ├── estacao2.json
+│   │   └── interfaces.ts
+│   ├── quiz.html
+│   ├── script.ts
+│   └── theme.css
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+└── tsconfig.json
+</pre>
