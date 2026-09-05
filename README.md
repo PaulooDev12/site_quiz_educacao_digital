@@ -6,7 +6,7 @@
 <ul>
     <li>Quiz cronometrado</li>
     <li>Estações sequências</li>
-    <li>Questões com images</li>
+    <li>Alternativas com images</li>
 </ul>
 
 -------
