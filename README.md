@@ -2,6 +2,15 @@
 
 -------
 
+<h1>O que o template suporta atualmente?</h1>
+<ul>
+    <li>Quiz cronometrado</li>
+    <li>Estações sequências</li>
+    <li>Questões com images</li>
+</ul>
+
+-------
+
 <h1>Como rodar?</h1>
 <p>Primeiro certifique-se de ter o git instalado na máquina se for windows e rode o comando abaixo na pasta desejada<br> pórem se for linux apenas rode o comando abaixo:</p>
 <code>git clone https://github.com/PaulooDev12/site_quiz_educacao_digital</code>
