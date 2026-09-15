@@ -24,6 +24,8 @@ const optionsContainer = document.getElementById('options-container');
 const finalScoreElement = document.getElementById('final-score');
 const resultsElement = document.getElementById("results");
 const nextBtn = document.getElementById('next-station-btn');
+const introScreen = document.getElementById('intro-screen');
+const startQuizBtn = document.getElementById('start-quiz-btn');
 function startQuiz() {
     score = 0;
     streak = 0;
@@ -202,7 +204,13 @@ function startTimer() {
     }, 1000);
 }
 document.addEventListener('DOMContentLoaded', () => {
-    loadStation(0);
+    quizScreen.classList.add('hide');
+    quizTitle.classList.add('hide');
+    startQuizBtn.addEventListener('click', () => {
+        introScreen.classList.add('hide');
+        quizTitle.classList.remove('hide');
+        loadStation(0);
+    });
 });
 export {};
 //# sourceMappingURL=script.js.map

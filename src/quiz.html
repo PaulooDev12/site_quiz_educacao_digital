@@ -1,43 +1,61 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="theme.css">
-</head>
-<body>
-    <main class="filter">
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz</title>
+        <link rel="stylesheet" href="theme.css">
+    </head>
+    <body>
+       <main class="filter">
 
-    <main id="main">
+    <div id="main">
+        <div id="intro-screen" class="intro-screen">
+            <div class="intro-content">
+                <h1>Quiz de Educação Digital</h1>
+                <p>Bem-vindo ao nosso circuito de Educação Digital!</p>
+                <p>
+                    Teste seus conhecimentos sobre tecnologia,
+                    segurança e o uso consciente da internet.
+                </p>
 
-    </main>
+                <div class="intro-rules">
+                    <h2>Como funciona?</h2>
+                    <p>• Responda às perguntas de cada estação.</p>
+                    <p>• Leia cada questão com atenção.</p>
+                    <p>• Tente acertar o máximo possível!</p>
+                </div>
+
+                <button id="start-quiz-btn" class="start-quiz-btn">
+                    COMEÇAR QUIZ
+                </button>
+            </div>
+        </div>
+    </div>
+
     <h1 class="title" id="title">A</h1>
-   
-    <div class="quiz-container">
-        
-        <div id="quiz-screen">
-            <div class="header">
-                <span id="question-number"></span>
-                <span id="timer-display" class="timer">Tempo: 40s</span>
-                
-            </div>
-            <h2 id="question-text">Carregando pergunta...</h2>
-            <div id="options-container" class="options-list"></div>
+        <div class="quiz-container "> 
+            <div id="quiz-screen">
+        <div class="header">
+            <span id="question-number"></span>
+            <span id="timer-display" class="timer">Tempo: 40s</span>
         </div>
 
-        
-       <div id="result-screen" class="hide score-screen">
-                <h2>Quiz Finalizado!</h2>
-                <h3 id="final-score">Você acertou 0 de 0 perguntas.</h3>
-                <h3 id="results"></h3>
-                <button id="next-station-btn" class="option-btn"></button>
-            </div>
+        <h2 id="question-text">Carregando pergunta...</h2>
+
+        <div id="options-container" class="options-list"></div>
+    </div>
+
+    <div id="result-screen" class="hide score-screen">
+        <h2>Quiz Finalizado!</h2>
+        <h3 id="final-score">Você acertou 0 de 0 perguntas.</h3>
+        <h3 id="results"></h3>
+        <button id="next-station-btn" class="option-btn"></button>
+    </div>
         </div>
-    </div>
-    <div id="popup">
-    </div>
-    </main>
-    <script type="module" src="../dist/script.js" defer></script>
-</body>
-</html>
+        <div id="popup">
+        </div>
+        </main>
+        <script type="module" src="../dist/script.js" defer></script>
+    </body>
+    </html>

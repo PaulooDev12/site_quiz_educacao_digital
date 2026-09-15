@@ -239,7 +239,18 @@ function startTimer(): void {
         }
     }, 1000);
 }
+const introScreen = document.getElementById('intro-screen') as HTMLDivElement;
+const startQuizBtn = document.getElementById('start-quiz-btn') as HTMLButtonElement;
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadStation(0);
+    const introScreen = document.getElementById('intro-screen') as HTMLElement;
+    const startBtn = document.getElementById('start-quiz-btn') as HTMLButtonElement;
+
+    document.body.classList.add('intro-active');
+
+    startBtn.addEventListener('click', () => {
+        document.body.classList.remove('intro-active');
+        introScreen.classList.add('hide');
+        loadStation(0);
+    });
 });
